@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useLogin } from '../Context/Authentication';
+import { Link } from 'react-router-dom'
 
 const TrashOfor = () => {
 
@@ -45,8 +46,10 @@ const TrashOfor = () => {
                             <h3>{cartSum} UZS</h3>
                         </div>
                     </div>
-                    <button onClick={() => window.location.href = '/myOfor'} className="btn btn-primary">
-                        Оформить заказ
+                    <button className="btn btn-primary">
+                        <Link style={{color: "white", textDecoration: "none"}} to="/myOfor">
+                            Оформить заказ
+                        </Link>
                     </button>
                 </>
             }

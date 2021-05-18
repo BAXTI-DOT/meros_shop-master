@@ -6,6 +6,7 @@ import visibility from '../Home/Products/img/others/visibility.svg'
 import star from '../Home/Products/img/others/star.svg'
 import trash from '../Home/Products/img/others/trash.svg'
 import { ADD_TO_CART } from '../Home/Query'
+import { Link } from 'react-router-dom'
 
 const SubclassProducts = ({ filteredProducts, subclassProducts, detailToSubclass, token }) => {
 
@@ -40,10 +41,6 @@ const SubclassProducts = ({ filteredProducts, subclassProducts, detailToSubclass
             }
         }
     })
-    
-    const handleSee = (productID) => {
-        window.location.href = `/products/${productID}`
-    }
     
     const handleForward = (productID) => {
         if(token) {
@@ -92,9 +89,9 @@ const SubclassProducts = ({ filteredProducts, subclassProducts, detailToSubclass
                                     <div className="img">
                                         <img src={e.image} alt="" /></div>
                                         <div className="img-icons">
-                                            <button style={style} onClick={() => handleSee(e.id)}>
-                                                <img src={visibility} alt="" className="icon-img"/>
-                                            </button>
+                                            <Link to={`/products/${e.id}`}>
+                                                <button style={style}><img src={visibility} alt="" className="icon-img"/></button>
+                                            </Link>
                                             <button onClick={() => handleForward(e.id)} style={style}>
                                                 <img src={star} alt="" className="icon-img"/>
                                             </button>
@@ -116,9 +113,9 @@ const SubclassProducts = ({ filteredProducts, subclassProducts, detailToSubclass
                                 <div className="img">
                                     <img src={e.image_link} alt="" /></div>
                                     <div className="img-icons">
-                                        <button style={style} onClick={() => handleSee(e.product_id)}>
-                                            <img src={visibility} alt="" className="icon-img"/>
-                                        </button>
+                                        <Link to={`/products/${e.product_id}`}>
+                                            <button style={style}><img src={visibility} alt="" className="icon-img"/></button>
+                                        </Link>
                                         <button onClick={() => handleForward(e.product_id)} style={style}>
                                             <img src={star} alt="" className="icon-img"/>
                                         </button>

@@ -5,6 +5,7 @@ import trash from './img/trash.svg'
 import { useSnackbar } from 'notistack'
 import { useMutation } from '@apollo/client'
 import { ADD_FORWARD, ADD_TO_CART } from '../Query'
+import { Link } from 'react-router-dom'
 
 const SingleRecommend = ({ Stars, recommended, token }) => {
 
@@ -39,10 +40,6 @@ const SingleRecommend = ({ Stars, recommended, token }) => {
         }
     })
     
-    const handleSee = (productID) => {
-        window.location.href = `/products/${productID}`
-    }
-
     const handleForward = (productID) => {
       
         if(token) {
@@ -90,7 +87,9 @@ const SingleRecommend = ({ Stars, recommended, token }) => {
                                 <div className="img">
                                     <img src={e.image} alt="" className="Quran"/></div>
                                 <div className="img-icons">
-                                    <button onClick={() => handleSee(e.id)} style={style}><img src={visibility} alt="" className="icon-img"/></button>
+                                    <Link to={`/products/${e.id}`}>
+                                        <button style={style}><img src={visibility} alt="" className="icon-img"/></button>
+                                    </Link>
                                     <button onClick={() => handleForward(e.id)} style={style}><img src={star} alt="" className="icon-img"/></button>
                                     <button onClick={() => handleCart(e.id)} style={style}><img src={trash} alt="" className="icon-img"/></button>
                                     </div>

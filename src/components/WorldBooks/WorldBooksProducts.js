@@ -6,6 +6,7 @@ import { useMutation } from '@apollo/client'
 import { useSnackbar } from 'notistack'
 import { ADD_FORWARD } from './Query'
 import { ADD_TO_CART } from '../Home/Query'
+import { Link } from 'react-router-dom'
 
 const WorldBooksProducts = ({ filteredProducts, subcategoryProducts, detailToSubcategory, token }) => {
 
@@ -40,10 +41,6 @@ const WorldBooksProducts = ({ filteredProducts, subcategoryProducts, detailToSub
             }
         }
     })
-    
-    const handleSee = (productID) => {
-        window.location.href = `/products/${productID}`
-    }
     
     const handleForward = (productID) => {
         if(token) {
@@ -93,9 +90,9 @@ const WorldBooksProducts = ({ filteredProducts, subcategoryProducts, detailToSub
                                     <div className="img">
                                         <img src={e.image} alt="" /></div>
                                     <div className="img-icons">
-                                    <button onClick={() => handleSee(e.id)} style={style}>
-                                        <img src={visibility} alt="" className="icon-img"/>
-                                    </button>
+                                    <Link to={`/products/${e.id}`}>
+                                        <button style={style}><img src={visibility} alt="" className="icon-img"/></button>
+                                    </Link>
                                     <button onClick={() => handleForward(e.id)} style={style}>
                                         <img src={star} alt="" className="icon-img"/>
                                     </button>
@@ -117,15 +114,15 @@ const WorldBooksProducts = ({ filteredProducts, subcategoryProducts, detailToSub
                                 <div className="img">
                                     <img src={e.image_link} alt="" /></div>
                                     <div className="img-icons">
-                                    <button onClick={() => handleSee(e.id)} style={style}>
-                                        <img src={visibility} alt="" className="icon-img"/>
-                                    </button>
-                                    <button onClick={() => handleForward(e.product_id)} style={style}>
-                                        <img src={star} alt="" className="icon-img"/>
-                                    </button>
-                                    <button onClick={() => handleCart(e.product_id)} style={style}>
-                                        <img src={trash} alt="" className="icon-img"/>
-                                    </button>
+                                        <Link to={`/products/${e.product_id}`}>
+                                            <button style={style}><img src={visibility} alt="" className="icon-img"/></button>
+                                        </Link>
+                                        <button onClick={() => handleForward(e.product_id)} style={style}>
+                                            <img src={star} alt="" className="icon-img"/>
+                                        </button>
+                                        <button onClick={() => handleCart(e.product_id)} style={style}>
+                                            <img src={trash} alt="" className="icon-img"/>
+                                        </button>
                                 </div></div>
                             <p>{e.category_name}</p>
                             <h2>{e.product_name}</h2>

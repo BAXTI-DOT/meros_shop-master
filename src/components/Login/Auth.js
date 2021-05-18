@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import { LOGIN } from './Query'
 import { useLogin } from '../Context/Authentication'
 import { Redirect } from "react-router"
+import { Link } from 'react-router-dom'
 
 const Login = () => {
 
@@ -49,7 +50,11 @@ const Login = () => {
                     <label>Password</label>
                     <input onKeyUp={e => setPassword(e.target.value)} type="password" className="auth-input" placeholder="Password"/> 
                     <button disabled={disabled} style={ disabled ?  {"transparent": "white"} : { "backgroundColor": "blue"}} type="submit" className="btn btn-dark">Login</button>
-                    <button type="submit" className="btn btn-light">Register</button>
+                    <button className="btn btn-light">
+                        <Link to="/register">
+                            Register
+                        </Link>  
+                    </button>
                 </div>
            </div> 
         </form>

@@ -7,6 +7,7 @@ import { ADD_FORWARD, NEW_PRODUCTS } from './Query'
 import { useParams } from 'react-router'
 import { useSnackbar } from 'notistack'
 import { ADD_TO_CART } from '../Home/Query'
+import { Link } from 'react-router-dom'
 
 const SingleNewBook = ({ Stars, token }) => {
     
@@ -47,10 +48,6 @@ const SingleNewBook = ({ Stars, token }) => {
             }
         }
     })
-    
-    const handleSee = (productID) => {
-        window.location.href = `/products/${productID}`
-    }
     
     const handleForward = (productID) => {
         if(token) {
@@ -98,7 +95,9 @@ const SingleNewBook = ({ Stars, token }) => {
                                 <div className="img">
                                     <img src={e.image} alt="" className="Quran"/></div>
                                 <div className="img-icons">
-                                    <button onClick={() => handleSee(e.id)} style={style}><img src={visibility} alt="" className="icon-img"/></button>
+                                    <Link to={`/products/${e.id}`}>
+                                        <button style={style}><img src={visibility} alt="" className="icon-img"/></button>
+                                    </Link>
                                     <button onClick={() => handleForward(e.id)} style={style}><img src={star} alt="" className="icon-img"/></button>
                                     <button onClick={() => handleCart(e.id)} style={style}><img src={trash} alt="" className="icon-img"/></button>
                                     </div>

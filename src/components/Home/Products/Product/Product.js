@@ -5,6 +5,7 @@ import { useState } from 'react'
 import { useMutation } from '@apollo/client'
 import { ADD_FORWARD, ADD_TO_CART } from '../../Query'
 import { useSnackbar } from 'notistack'
+import { Link } from 'react-router-dom'
  
 const Product = ({ Stars, products, token }) => {
 
@@ -39,10 +40,6 @@ const Product = ({ Stars, products, token }) => {
             }
         }
     })
-    
-    const handleSee = (productID) => {
-        window.location.href = `/products/${productID}`
-    }
     
     const handleForward = (productID) => {
         if(token) {
@@ -90,7 +87,9 @@ const Product = ({ Stars, products, token }) => {
                                         <img src={e.image} alt="" />
                                     </div>
                                     <div className="img-icons">
-                                        <button onClick={() => handleSee(e.id)} value={e.id} style={style}><img src={visibility} alt="" className="icon-img"/></button>
+                                        <Link to={`/products/${e.id}`}>
+                                            <button style={style}><img src={visibility} alt="" className="icon-img"/></button>
+                                        </Link>
                                         <button onClick={() => handleForward(e.id)} style={style}><img src={star} alt="" className="icon-img"/></button>
                                         <button onClick={() => handleCart(e.id, e.name, e.price, e.image)} style={style}><img src={trash} alt="" className="icon-img"/></button>
                                     </div>
