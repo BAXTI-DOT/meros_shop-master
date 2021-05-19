@@ -10,7 +10,7 @@ const TrashOfor = () => {
 
     useEffect(() => {
         ;(async() => {
-            axios.get('http://localhost:4000/cart', {
+            axios.get('https://meros-master.herokuapp.com/cart', {
                 headers: {
                     Authorization: `${token}`
                 }
