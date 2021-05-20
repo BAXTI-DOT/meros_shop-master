@@ -82,7 +82,7 @@ const Product = ({ Stars, products, token }) => {
                     products && products.map((e, i) => (
                         <div key={i} className="product-preview hi-product">
                             <div className="img-preview">
-                                <div>
+                                <div className="img-alll">
                                     <div className="img1">
                                         <img src={e.image} alt="" />
                                     </div>
