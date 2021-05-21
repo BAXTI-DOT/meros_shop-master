@@ -7,6 +7,10 @@
   box-sizing: border-box;
   font-family: Raleway;
 }
+:root{
+  --primary-color: #32386B;
+  --warning-color: #F5921C;
+}
 .container{
   max-width: 90%;
   margin: auto;
@@ -76,7 +80,7 @@ hr{
   align-items: center;
 }
 .btn-primary{
-  background-color: #32386B;
+  background-color: var(--primary-color);
   color: #fff;
 }
 .btn:hover{
@@ -317,6 +321,7 @@ hr{
 .img-icons img{
   margin: 2% 0;
 }
+
 .img:hover + .img-icons{
   opacity: 1;
   transition: ease .3s opacity;
@@ -1072,6 +1077,7 @@ footer{
   border-radius: 4px;
   padding: 10px;
   width: 40%;
+  box-shadow: 3px 4px 10px rgba(0, 0, 0, 0.3);
 }
 .otziv-modal-body{
   display: flex;
