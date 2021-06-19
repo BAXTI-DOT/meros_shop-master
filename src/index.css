@@ -7,6 +7,10 @@
   box-sizing: border-box;
   font-family: Raleway;
 }
+:root{
+  --primary-color: #32386B;
+  --warning-color: #F5921C;
+}
 .container{
   max-width: 90%;
   margin: auto;
@@ -76,8 +80,12 @@ hr{
   align-items: center;
 }
 .btn-primary{
-  background-color: #32386B;
+  background-color: var(--primary-color);
   color: #fff;
+}
+.btn:hover{
+  box-shadow: 3px 4px 10px rgba(0, 0, 0, 0.5);
+  transition: ease .3s box-shadow;
 }
 .MiddleNav{
   padding: 15px 0;
@@ -286,13 +294,24 @@ hr{
   justify-content: space-between;
   flex-direction: row-reverse;
 }
+.img-alll{
+  display: flex;
+  flex-direction: row-reverse;
+}
 .img{
   object-fit: cover;
   width: 200px;
   height: 200px;
 }
+.img img, .img1 img{
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+} 
 .img1{
   object-fit: cover;
+  width: 200px;
+  height: 200px;
 }
 .img-icons{
   display: inline-flex;
@@ -302,6 +321,7 @@ hr{
 .img-icons img{
   margin: 2% 0;
 }
+
 .img:hover + .img-icons{
   opacity: 1;
   transition: ease .3s opacity;
@@ -1057,6 +1077,7 @@ footer{
   border-radius: 4px;
   padding: 10px;
   width: 40%;
+  box-shadow: 3px 4px 10px rgba(0, 0, 0, 0.3);
 }
 .otziv-modal-body{
   display: flex;

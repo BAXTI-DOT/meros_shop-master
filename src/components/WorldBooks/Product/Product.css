@@ -61,6 +61,10 @@
     margin-left: 30px;
 }
 
+.mainproduct-container .xudtovar-container .xudtovar-content .xudbig-img img {
+    border-radius: 4px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
 .mainproduct-container .xudtovar-container .xudtovar-content .xuddesc-container {
     display: flex;
     flex-direction: column;
@@ -483,14 +487,17 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    width: 255px;
-    height: 210px;
+    width: 200px;
+    height: 200px;
     position: relative;
 }
 
 .mainproduct-container .smotr-book .smotr-container .single-smotr .imgwith-sale img {
     display: block;
     height: auto;
+    width: 100%;
+    margin: 0 0 0 40px;
+    border-radius: 4px;
 }
 
 .mainproduct-container .smotr-book .smotr-container .single-smotr .imgwith-sale .overlay-img {
@@ -951,6 +958,11 @@
     color: #FFFFFF;
 }
 
+.mainproduct-container .otziv-container .leaveotziv-container .otziv-btn button:hover, .mainproduct-container .xudtovar-container .xudtovar-content .xuddesc-container .xudtovar-button button:hover{
+    box-shadow: 3px 4px 10px rgba(0, 0, 0, 0.5);
+    transition: ease .3s box-shadow;  
+    cursor: pointer;
+}
 .mainproduct-container .otziv-container .leaveotziv-container .otziv-btn .otz-photo {
     display: flex;
     flex-direction: row;
